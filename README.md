@@ -22,10 +22,11 @@ docker run --rm \
   --tmpfs /run  --tmpfs /run/lock --tmpfs /tmp \
   --cap-add SYS_BOOT --cap-add SYS_ADMIN \
   -v /sys/fs/cgroup:/sys/fs/cgroup \
+  -e PASSWORD=password
   -p 6080:6080 moyash/novnc-ros-desktop
 ```
 
-Open `localhost:6080` in your browser:
+Open `localhost:6080` in your browser and type `password` for vnc-auth:
 
 ![image](https://user-images.githubusercontent.com/41321650/95768029-a5e71000-0cf0-11eb-8f48-41cdea4c631b.png)
 
