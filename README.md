@@ -1,8 +1,10 @@
-# Docker Image for to use Desktop environment of ROS Melodic in Browser
+# Docker Images for to use Desktop environment of ROS in Browser
 
 Shall we get a rich desktop environment of ROS?
 
-## Components
+## Details
+
+image: `moyash/novnc-ros-desktop:melodic`
 
 - OS Image: Ubuntu 18.04
   - Desktop: GNOME Desktop
@@ -23,7 +25,7 @@ docker run --rm \
   --cap-add SYS_BOOT --cap-add SYS_ADMIN \
   -v /sys/fs/cgroup:/sys/fs/cgroup \
   -e PASSWORD=password
-  -p 6080:6080 moyash/novnc-ros-desktop
+  -p 6080:6080 moyash/novnc-ros-desktop:melodic
 ```
 
 Open `localhost:6080` in your browser and type `password` for vnc-auth:
