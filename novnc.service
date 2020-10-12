@@ -1,0 +1,11 @@
+[Unit]
+Description=noVNC remote desktop server
+After=tigervnc@:0.service
+ 
+[Service]
+Type=simple
+User=root
+ExecStart=/home/novnc/utils/launch.sh --vnc localhost:5900 --listen 6080
+
+[Install]
+WantedBy=multi-user.target

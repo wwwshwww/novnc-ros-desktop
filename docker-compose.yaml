@@ -1,0 +1,19 @@
+services:
+  melodic-vnc:
+    build: .
+    container_name: tigervnc-ver
+    environment:
+      PASSWORD: tagoken
+    tmpfs:
+      - /run
+      - /run/lock
+      - /tmp
+    cap_add:
+      - SYS_BOOT
+      - SYS_ADMIN
+    volumes: 
+      - /sys/fs/cgroup:/sys/fs/cgroup
+    ports:
+      - 6080:6080
+      - 6000:6000
+      - 5900:5900
