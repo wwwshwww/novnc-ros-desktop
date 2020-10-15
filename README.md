@@ -6,7 +6,7 @@ Shall we get a rich desktop environment of ROS?
 
 image: `moyash/novnc-ros-desktop:melodic`
 
-- OS Image: Ubuntu 18.04
+- OS: Ubuntu 18.04
   - Desktop: GNOME Desktop
 - VNC viewer: NoVNC
 - VNC server: TigerVNC
@@ -30,6 +30,6 @@ docker run --rm \
 
 Open `localhost:6080` in your browser and type `password` for vnc-auth:
 
-![image](https://user-images.githubusercontent.com/41321650/95768029-a5e71000-0cf0-11eb-8f48-41cdea4c631b.png)
+![image](https://user-images.githubusercontent.com/41321650/96120866-2775b280-0f2a-11eb-8673-3f6a73bfef74.png)
 
 Run as much as you want. Don't forget setting ROS.

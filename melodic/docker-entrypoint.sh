@@ -10,6 +10,8 @@ if [ ! -f $HOME/.vnc/passwd ] ; then
   su root -c "echo '$PASSWORD' | vncpasswd -f > /root/.vnc/passwd && chmod 600 /root/.vnc/passwd && touch /root/.Xresources"
 fi
 
+su root -c "echo session=gnome > /root/.vnc/config"
+
 source /opt/ros/melodic/setup.bash
 export ROS_IP=$(hostname -i)
 

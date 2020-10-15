@@ -29,21 +29,20 @@ CMD [ "/sbin/init" ]
 RUN apt-get update -y \
     && apt-get install -y \
         ubuntu-gnome-desktop \
+    && apt-get remove gnome-initial-setup -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update -y \
-    && apt-get install -y \
-        tigervnc-standalone-server \
+    && apt-get install -y --no-install-recommends \
+        wget \
+        libxfont-dev \
+    && apt --fix-broken install -y \
+    && wget -P /tmp http://tigervnc.bphinz.com/nightly/ubuntu-18.04LTS/amd64/tigervncserver_1.11.80+20201012git2ca7d264-1ubuntu1_amd64.deb \
+    && dpkg -i /tmp/tigervncserver_1.11.80+20201012git2ca7d264-1ubuntu1_amd64.deb \
+    && rm /tmp/tigervncserver_1.11.80+20201012git2ca7d264-1ubuntu1_amd64.deb \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
-# RUN apt-get update -y \
-#     && apt-get install -y --no-install-recommends \
-#         curl \
-#     && curl -SL https://bintray.com/tigervnc/stable/download_file?file_path=tigervnc-1.10.1.x86_64.tar.gz | tar zx -C /tmp \
-#     && rm -rf /tmp/tigervnc-1.10.1.x86_64/usr/lib \
-#     && cp -r /tmp/tigervnc-1.10.1.x86_64/usr/* /usr
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
@@ -67,8 +66,9 @@ RUN systemctl enable novnc
 
 EXPOSE 6000 6080 5900
 
-RUN mkdir -p /root/.vnc
-COPY xstartup /root/.vnc/xstartup
+RUN mkdir -p /root/.vnc & mkdir -p /root/.config/autostart
+COPY startup.desktop /root/.config/autostart/startup.desktop
+COPY set.sh /root/.vnc/set.sh
 COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]

@@ -7,7 +7,7 @@ Type=oneshot
 User=root
 EnvironmentFile=/root/tmpenv
 # ExecStartPre=/bin/systemctl set-environment LC_ALL=C.UTF-8
-ExecStart=/bin/bash -c 'source /root/.bashrc & systemctl import-environment'
- 
+ExecStart=/bin/bash -c 'systemctl import-environment'
+
 [Install]
 WantedBy=multi-user.target
