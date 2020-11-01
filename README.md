@@ -12,6 +12,14 @@ image: `moyash/novnc-ros-desktop:melodic`
 - VNC server: TigerVNC
 - ROS distro: Melodic
 
+image: `moyash/novnc-ros-desktop:noetic`
+
+- OS: Ubuntu 20.04
+  - Desktop: GNOME Desktop
+- VNC viewer: NoVNC
+- VNC server: TigerVNC
+- ROS distro: Noetic
+
 ## Usage
 
 See `docker-compose.yaml`.
