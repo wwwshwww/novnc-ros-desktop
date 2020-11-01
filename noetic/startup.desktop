@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Disable lockdown
+Comment=Yeah
+Exec=/root/.vnc/set.sh
+Type=Application
+X-GNOME-Autostart-enabled=true

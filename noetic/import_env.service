@@ -1,0 +1,13 @@
+[Unit]
+Description=import env to User Instance in Systemd
+After=syslog.target network.target 
+ 
+[Service]
+Type=oneshot
+User=root
+EnvironmentFile=/root/tmpenv
+# ExecStartPre=/bin/systemctl set-environment LC_ALL=C.UTF-8
+ExecStart=/bin/bash -c 'systemctl import-environment'
+
+[Install]
+WantedBy=multi-user.target
