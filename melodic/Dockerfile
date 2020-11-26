@@ -72,5 +72,6 @@ COPY startup.desktop /root/.config/autostart/startup.desktop
 COPY set.sh /root/.vnc/set.sh
 COPY docker-entrypoint.sh /
 COPY custom.conf /etc/gdm3/custom.conf
+COPY xserverrc /etc/X11/xinit/xserverrc
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
