@@ -70,5 +70,6 @@ RUN mkdir -p /root/.vnc & mkdir -p /root/.config/autostart
 COPY startup.desktop /root/.config/autostart/startup.desktop
 COPY set.sh /root/.vnc/set.sh
 COPY docker-entrypoint.sh /
+COPY /etc/gdm3/custom.conf custom.conf
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
