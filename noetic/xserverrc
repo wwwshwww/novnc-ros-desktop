@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec /usr/bin/X "$@"
+exec /usr/bin/X -listen tcp "$@"

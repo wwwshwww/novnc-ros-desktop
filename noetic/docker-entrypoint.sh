@@ -11,6 +11,7 @@ if [ ! -f $HOME/.vnc/passwd ] ; then
 fi
 
 su root -c "echo session=gnome > /root/.vnc/config"
+su root -c "echo listen=tcp >> /root/.vnc/config"
 
 source /opt/ros/noetic/setup.bash
 export ROS_IP=$(hostname -i)
