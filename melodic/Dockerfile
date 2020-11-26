@@ -33,14 +33,15 @@ RUN apt-get update -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+COPY tigervncserver_1.11.80+20201116git19165c8f-1ubuntu1_amd64.deb /tmp/
+
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         wget \
         libxfont-dev \
     && apt --fix-broken install -y \
-    && wget -P /tmp http://tigervnc.bphinz.com/nightly/ubuntu-18.04LTS/amd64/tigervncserver_1.11.80+20201012git2ca7d264-1ubuntu1_amd64.deb \
-    && dpkg -i /tmp/tigervncserver_1.11.80+20201012git2ca7d264-1ubuntu1_amd64.deb \
-    && rm /tmp/tigervncserver_1.11.80+20201012git2ca7d264-1ubuntu1_amd64.deb \
+    && dpkg -i /tmp/tigervncserver_1.11.80+20201116git19165c8f-1ubuntu1_amd64.deb \
+    && rm /tmp/tigervncserver_1.11.80+20201116git19165c8f-1ubuntu1_amd64.deb \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
