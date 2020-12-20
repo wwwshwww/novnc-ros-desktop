@@ -12,6 +12,7 @@ fi
 
 su root -c "echo session=gnome > /root/.vnc/config"
 su root -c "echo listen=tcp >> /root/.vnc/config"
+su root -c "echo source /opt/ros/melodic/setup.bash >> /root/.bashrc"
 
 source /opt/ros/melodic/setup.bash
 export ROS_IP=$(hostname -i)
