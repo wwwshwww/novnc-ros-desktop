@@ -1,4 +1,4 @@
-FROM ros:melodic-ros-base-bionic
+FROM osrf/ros:melodic-desktop-full
 
 ENV DEBIAN_FRONTEND noninteractive
 

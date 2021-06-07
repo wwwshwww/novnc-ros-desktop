@@ -1,4 +1,4 @@
-FROM ros:noetic-ros-base-focal
+FROM osrf/ros:noetic-desktop-full
 
 ENV DEBIAN_FRONTEND noninteractive
 
