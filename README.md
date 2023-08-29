@@ -1,6 +1,6 @@
 # Docker Images for to use Desktop environment of ROS in Browser
 
-GitPod Friendly! :D 
+GitPod Friendly! :D (PS: if the Docker extension is not installed on gitpod make sure to download it!)
 
 [![Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer)
 
